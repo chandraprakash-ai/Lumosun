@@ -19,41 +19,40 @@ export default function Hero() {
     return (
         <section id="home" className="hero">
             <div className="hero-bg">
-                <div className="hero-bg-gradient" />
-                <div className="hero-bg-pattern" />
+                {/* Subtle geometric pattern for light mode background */}
+                <div className="hero-bg-pattern-light" />
             </div>
 
             <div className="container hero-container">
                 <motion.div
                     className="hero-content"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
-                    <motion.span
-                        className="hero-badge"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                    <motion.div
+                        className="hero-badge-container"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        🌱 Canada's Trusted Solar Partner
-                    </motion.span>
+                        <span className="hero-badge-light">
+                            🌱 Canada's #1 Solar Installer
+                        </span>
+                    </motion.div>
 
                     <h1 className="h1 hero-title">
-                        Power your world with{' '}
-                        <span className="hero-title-accent">clean solar energy</span>
+                        Power Your Future with <span className="text-primary">Clean Energy</span>
                     </h1>
 
                     <p className="hero-subtitle">
-                        Lumosun Energy designs and installs smart solar systems that reduce your
-                        electricity bills and your carbon footprint. Join thousands of Canadians
-                        making the switch to sustainable energy.
+                        Transform your home into a sustainable powerhouse. Save on electricity bills, increase your property value, and protect the planet with our premium solar solutions.
                     </p>
 
                     <div className="hero-ctas">
                         <motion.a
                             href="#contact"
-                            className="btn btn-accent"
+                            className="btn btn-primary btn-lg"
                             onClick={(e) => {
                                 e.preventDefault();
                                 handleNavClick('#contact');
@@ -61,12 +60,12 @@ export default function Hero() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                         >
-                            Get a Free Assessment
+                            Get a Free Quote
                             <ArrowRight size={18} />
                         </motion.a>
                         <motion.a
                             href="#case-studies"
-                            className="btn btn-secondary"
+                            className="btn btn-outline btn-lg"
                             onClick={(e) => {
                                 e.preventDefault();
                                 handleNavClick('#case-studies');
@@ -74,20 +73,20 @@ export default function Hero() {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                         >
-                            View Our Case Studies
+                            View Projects
                         </motion.a>
                     </div>
 
                     <motion.div
-                        className="hero-trust"
+                        className="hero-trust-row"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
                     >
                         {trustBadges.map((badge, index) => (
-                            <div key={index} className="trust-badge">
-                                <badge.icon className="trust-badge-icon" size={20} />
-                                <span>{badge.text}</span>
+                            <div key={index} className="trust-item">
+                                <badge.icon className="trust-icon" size={20} />
+                                <span className="trust-text">{badge.text}</span>
                             </div>
                         ))}
                     </motion.div>
@@ -95,49 +94,45 @@ export default function Hero() {
 
                 <motion.div
                     className="hero-visual"
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <div className="hero-image-wrapper">
-                        <div className="hero-image-card">
-                            <div className="hero-image-content">
-                                <div className="hero-solar-icon">☀️</div>
-                                <div className="hero-image-text">
-                                    <span className="hero-image-stat">70%</span>
-                                    <span className="hero-image-label">Average Bill Reduction</span>
-                                </div>
+                    <div className="hero-image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2072&auto=format&fit=crop"
+                            alt="Modern Solar Home"
+                            className="hero-main-image"
+                        />
+                        <div className="hero-image-overlay" />
+
+                        {/* Floating Stat Card */}
+                        <motion.div
+                            className="floating-stat-card"
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 1, duration: 0.6 }}
+                        >
+                            <div className="stat-icon-bg">
+                                <Zap size={24} color="var(--color-primary)" fill="currentColor" />
                             </div>
-                        </div>
-                        <div className="hero-image-card hero-image-card-2">
-                            <div className="hero-image-content">
-                                <div className="hero-solar-icon">🏠</div>
-                                <div className="hero-image-text">
-                                    <span className="hero-image-stat">5-7 Years</span>
-                                    <span className="hero-image-label">Typical Payback Period</span>
-                                </div>
+                            <div className="stat-info">
+                                <span className="stat-value">40%</span>
+                                <span className="stat-label">Avg. Savings</span>
                             </div>
-                        </div>
-                        <div className="hero-image-card hero-image-card-3">
-                            <div className="hero-image-content">
-                                <div className="hero-solar-icon">🌍</div>
-                                <div className="hero-image-text">
-                                    <span className="hero-image-stat">25+ Years</span>
-                                    <span className="hero-image-label">Panel Warranty</span>
-                                </div>
-                            </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
 
-            <div className="hero-scroll-indicator">
+            <div className="hero-scroll-light">
                 <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
                 >
-                    <span>Scroll to explore</span>
-                    <div className="scroll-arrow" />
+                    <div className="scroll-mouse">
+                        <div className="scroll-wheel" />
+                    </div>
                 </motion.div>
             </div>
         </section>

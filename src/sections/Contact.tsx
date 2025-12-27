@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Contact.css';
 
@@ -96,15 +96,6 @@ export default function Contact() {
                                     <div>
                                         <span className="contact-label">Email Us</span>
                                         <a href="mailto:hello@lumosunenergy.com" className="contact-value">hello@lumosunenergy.com</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="contact-icon">
-                                        <MapPin size={20} />
-                                    </div>
-                                    <div>
-                                        <span className="contact-label">Visit Us</span>
-                                        <span className="contact-value">100 King Street West<br />Toronto, ON M5X 1A9</span>
                                     </div>
                                 </li>
                             </ul>

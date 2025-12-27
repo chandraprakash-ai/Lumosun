@@ -14,6 +14,7 @@ const projects = [
         savings: '$2,400/year',
         co2: '8 tons CO₂/year',
         description: 'A beautiful Victorian home in the Annex neighbourhood, now powered by a rooftop solar array that covers 95% of the household\'s energy needs.',
+        image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const projects = [
         savings: '$18,500/year',
         co2: '52 tons CO₂/year',
         description: 'A 24-unit residential complex that reduced common area electricity costs by 70% with our commercial solar solution.',
+        image: 'https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 3,
@@ -34,6 +36,7 @@ const projects = [
         savings: '$45,000/year',
         co2: '165 tons CO₂/year',
         description: 'A 50,000 sq ft distribution warehouse with a massive rooftop installation achieving excellent performance despite cold winters.',
+        image: 'https://images.unsplash.com/photo-1566093097221-ac2335b09e70?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 4,
@@ -44,6 +47,7 @@ const projects = [
         savings: '$1,600/year',
         co2: '5 tons CO₂/year',
         description: 'An off-grid cottage solution with battery storage, providing year-round power independence in a remote location.',
+        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 5,
@@ -54,6 +58,7 @@ const projects = [
         savings: '$9,200/year',
         co2: '30 tons CO₂/year',
         description: 'A municipal recreation centre showcasing renewable energy to thousands of visitors while slashing operating costs.',
+        image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'
     },
     {
         id: 6,
@@ -64,6 +69,7 @@ const projects = [
         savings: '$22,000/year',
         co2: '78 tons CO₂/year',
         description: 'A farming cooperative using solar to power irrigation systems and cold storage, with ground-mounted panels maximizing land use.',
+        image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80'
     },
 ];
 
@@ -168,13 +174,12 @@ export default function CaseStudies() {
                             onClick={() => setSelectedProject(project)}
                         >
                             <div className="project-image">
-                                <div className="project-image-placeholder">
-                                    <span className="project-emoji">
-                                        {project.type === 'Residential' ? '🏠' :
-                                            project.type === 'Commercial' ? '🏢' :
-                                                project.type === 'Industrial' ? '🏭' : '🌾'}
-                                    </span>
-                                </div>
+                                <img
+                                    src={project.image}
+                                    alt={project.name}
+                                    className="project-image-img"
+                                />
+                                <div className="project-overlay" />
                             </div>
                             <div className="project-content">
                                 <span className={`project-badge project-badge-${project.type.toLowerCase()}`}>

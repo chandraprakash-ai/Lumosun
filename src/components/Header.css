@@ -31,15 +31,13 @@
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.5rem;
-    color: white;
-    /* White by default for hero overlay */
+    color: var(--text-dark);
     letter-spacing: -0.02em;
     transition: all var(--transition-fast);
 }
 
 .header--scrolled .logo {
     color: var(--text-dark);
-    /* Dark on scroll */
 }
 
 .logo:hover {
@@ -49,13 +47,11 @@
 .logo-icon {
     width: 32px;
     height: 32px;
-    color: var(--color-primary-light);
-    /* Lighter green for dark bg */
+    color: var(--color-primary);
 }
 
 .header--scrolled .logo-icon {
     color: var(--color-primary);
-    /* Standard green on scroll */
 }
 
 .logo-text {
@@ -71,19 +67,17 @@
 .nav-link {
     font-weight: 500;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
-    /* Light text for hero overlay */
+    color: var(--text-body);
     transition: color var(--transition-fast);
     position: relative;
 }
 
 .header--scrolled .nav-link {
     color: var(--text-body);
-    /* Dark text on scroll */
 }
 
 .nav-link:hover {
-    color: white;
+    color: var(--color-primary);
 }
 
 .header--scrolled .nav-link:hover {
@@ -95,8 +89,8 @@
     font-size: 0.95rem;
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-sm);
-    background: white;
-    color: var(--color-primary);
+    background: var(--color-primary);
+    color: white;
 }
 
 .header--scrolled .header-cta {
@@ -107,12 +101,13 @@
 .header-cta:hover {
     box-shadow: var(--shadow-glow);
     transform: translateY(-2px);
+    background: var(--color-primary-dark);
 }
 
 .mobile-menu-btn {
     display: none;
     padding: 0.5rem;
-    color: white;
+    color: var(--text-dark);
 }
 
 .header--scrolled .mobile-menu-btn {

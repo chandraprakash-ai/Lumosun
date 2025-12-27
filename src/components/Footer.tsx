@@ -1,4 +1,4 @@
-import { Sun, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Sun, Mail, Phone } from 'lucide-react';
 import './Footer.css';
 
 const quickLinks = [
@@ -38,12 +38,7 @@ export default function Footer() {
                             We design, install, and maintain solar systems that save money and the planet.
                         </p>
                         <div className="footer-social">
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
-                                <Linkedin size={20} />
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
-                                <Instagram size={20} />
-                            </a>
+                            {/* Social links removed */}
                         </div>
                     </div>
 
@@ -95,10 +90,6 @@ export default function Footer() {
                             <li>
                                 <Mail size={16} />
                                 <a href="mailto:hello@lumosunenergy.com">hello@lumosunenergy.com</a>
-                            </li>
-                            <li>
-                                <MapPin size={16} />
-                                <span>100 King Street West<br />Toronto, ON M5X 1A9</span>
                             </li>
                         </ul>
                     </div>
